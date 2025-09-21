@@ -13,8 +13,20 @@ export default function Hero() {
         Your browser does not support the video tag.
       </video>
 
-      {/* Optional overlay for dark effect */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/30 -z-10"></div>
+
+      {/* Fixed Content (Mobile + Desktop same look) */}
+      {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-8">
+        <h1 className="text-5xl font-bold mb-4">Burj Al Arab</h1>
+        <p className="text-lg mb-6">The world’s most luxurious hotel experience</p>
+        <a
+          href="#suites"
+          className="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition"
+        >
+          Explore Suites
+        </a> */}
+      {/* </div> */}
     </header>
-  );
+  )
 }
