@@ -48,18 +48,15 @@ export default function Navbar() {
         </div>
 
         {/* Right Side */}
-        <div className="flex items-center gap-4 font-medium">
-          {/* Mobile: Login + Reserve */}
-          <div className="flex md:hidden items-center gap-4">
-            <button className="hover:underline">{t("Login")}</button>
-            <button
-              className={`px-4 py-2 rounded-md font-semibold transition-colors ${
-                scrolled ? "bg-white text-black" : "bg-black text-white"
-              }`}
-            >
-              {t("Reserve")}
-            </button>
-          </div>
+        <div className="flex items-center gap-6 font-medium">
+          {/* Reserve button (always visible on all devices) */}
+          <button
+            className={`px-4 py-2 rounded-md font-semibold transition-colors ${
+              scrolled ? "bg-white text-black" : "bg-black text-white"
+            }`}
+          >
+            {t("Reserve")}
+          </button>
 
           {/* Desktop only options */}
           <div className="hidden md:flex items-center gap-6">
@@ -77,13 +74,6 @@ export default function Navbar() {
 
             <button className="hover:underline">{t("Login")}</button>
             <button className="hover:underline">{t("MyReservation")}</button>
-            <button
-              className={`px-4 py-2 rounded-md font-semibold transition-colors ${
-                scrolled ? "bg-white text-black" : "bg-black text-white"
-              }`}
-            >
-              {t("Reserve")}
-            </button>
           </div>
         </div>
       </div>
