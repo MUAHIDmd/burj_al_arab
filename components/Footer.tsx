@@ -14,7 +14,7 @@ export default function Footer() {
               <li><a href="#home" className="hover:text-white">Home</a></li>
               <li><a href="#properties" className="hover:text-white">Properties</a></li>
               <li><a href="#gallery" className="hover:text-white">Gallery</a></li>
-              <li><a href="#policies" className="hover:text-white">Hotel Policies</a></li>
+              <li><a href="#policies" className="hover:text-white">Policies</a></li>
               <li><a href="#faqs" className="hover:text-white">FAQs</a></li>
               <li><a href="#contact" className="hover:text-white">Contact</a></li>
             </ul>
