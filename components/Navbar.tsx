@@ -6,7 +6,7 @@ import { useTranslation } from "next-i18next";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { t, i18n } = useTranslation("common"); // i18n yahan se milega
+  const { t, i18n } = useTranslation("common");
 
   // Detect scroll
   useEffect(() => {
@@ -17,18 +17,13 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
- 
-
-
-const changeLanguage = (lng: string) => {
-  if (i18n?.changeLanguage) {
-    i18n.changeLanguage(lng);
-  } else {
-    console.error("i18n not initialized yet");
-  }
-};
-
-
+  const changeLanguage = (lng: string) => {
+    if (i18n?.changeLanguage) {
+      i18n.changeLanguage(lng);
+    } else {
+      console.error("i18n not initialized yet");
+    }
+  };
 
   return (
     <>
@@ -52,30 +47,44 @@ const changeLanguage = (lng: string) => {
           <div className="font-serif text-2xl tracking-wide">JUMEIRAH</div>
         </div>
 
-        {/* Right: Options */}
-        <div className="flex items-center gap-6 font-medium">
-          {/* Language Dropdown */}
-          <select
-            onChange={(e) => changeLanguage(e.target.value)}
-            className="bg-black border border-white px-2 py-1 rounded"
-            value={i18n.language} // dropdown me selected language dikhane ke liye
-          >
-            <option value="en">English</option>
-            <option value="ar">Arabic</option>
-            <option value="fr">French</option>
-            <option value="de">German</option>
-            <option value="ur">Urdu</option>
-          </select>
+        {/* Right Side */}
+        <div className="flex items-center gap-4 font-medium">
+          {/* Mobile: Login + Reserve */}
+          <div className="flex md:hidden items-center gap-4">
+            <button className="hover:underline">{t("Login")}</button>
+            <button
+              className={`px-4 py-2 rounded-md font-semibold transition-colors ${
+                scrolled ? "bg-white text-black" : "bg-black text-white"
+              }`}
+            >
+              {t("Reserve")}
+            </button>
+          </div>
 
-          <button className="hover:underline">{t("Login")}</button>
-          <button className="hover:underline">{t("MyReservation")}</button>
-          <button
-            className={`px-4 py-2 rounded-md font-semibold transition-colors ${
-              scrolled ? "bg-white text-black" : "bg-black text-white"
-            }`}
-          >
-            {t("Reserve")}
-          </button>
+          {/* Desktop only options */}
+          <div className="hidden md:flex items-center gap-6">
+            <select
+              onChange={(e) => changeLanguage(e.target.value)}
+              className="bg-black border border-white px-2 py-1 rounded"
+              value={i18n.language}
+            >
+              <option value="en">English</option>
+              <option value="ar">Arabic</option>
+              <option value="fr">French</option>
+              <option value="de">German</option>
+              <option value="ur">Urdu</option>
+            </select>
+
+            <button className="hover:underline">{t("Login")}</button>
+            <button className="hover:underline">{t("MyReservation")}</button>
+            <button
+              className={`px-4 py-2 rounded-md font-semibold transition-colors ${
+                scrolled ? "bg-white text-black" : "bg-black text-white"
+              }`}
+            >
+              {t("Reserve")}
+            </button>
+          </div>
         </div>
       </div>
 
