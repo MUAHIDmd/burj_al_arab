@@ -24,11 +24,11 @@ export default function Home() {
 
   // Gallery data
   const initialGallery = [
-    "/images/gallery1.avif","/images/gallery2.avif","/images/gallery3.avif","/images/gallery4.avif",
-    "/images/gallery5.avif","/images/gallery6.avif","/images/gallery7.avif","/images/gallery8.avif"
+    "/images/gallery1.jpg","/images/gallery2.png","/images/gallery3.avif","/images/gallery4.avif",
+    "/images/gallery5.avif","/images/gallery6.jpg","/images/gallery7.avif","/images/gallery8.avif"
   ]
   const moreGallery = [
-    "/images/gallery9.avif","/images/gallery10.avif","/images/gallery11.avif","/images/gallery12.avif",
+    "/images/gallery9.jpg","/images/gallery10.webp","/images/gallery11.jpg","/images/gallery12.jpg",
     "/images/gallery13.avif","/images/gallery14.avif","/images/gallery15.avif","/images/gallery16.avif",
     "/images/gallery17.avif","/images/gallery18.avif"
   ]
